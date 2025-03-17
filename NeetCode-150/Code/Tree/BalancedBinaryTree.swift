@@ -27,6 +27,20 @@ import UIKit
 
 class BalancedBinaryTree {
     func isBalanced(_ root: TreeNode?) -> Bool {
-        // balanced
+        return dfs(root).balanced
+    }
+    
+    private func dfs(_ root: TreeNode?) -> (balanced: Bool, height: Int) {
+        guard let root = root else {
+            return (true, 0)
+        }
+        
+        let left = dfs(root.left)
+        let right = dfs(root.right)
+        
+        let balanced = left.balanced && right.balanced && abs(left.height - right.height) <= 1
+        let height = 1 + max(left.height, right.height)
+        
+        return (balanced, height)
     }
 }
