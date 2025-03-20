@@ -7,6 +7,6 @@
 
 class NUmberOf1Bits {
     func hammingWeight(_ n: Int) -> Int {
-        
+        return 1
     }
 }
