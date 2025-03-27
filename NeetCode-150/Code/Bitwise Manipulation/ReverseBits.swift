@@ -6,12 +6,12 @@
 //
 class ReverseBits {
     func reverseBits(_ n: Int) -> Int {
-        var res = 0
+        var res1 = 0
         var num = n
         for i in 0..<32 {
             let bit = (num >> i) & 1
-            res |= (bit << (31 - i))
+            res1 |= (bit << (31 - i))
         }
-        return res
+        return res1
     }
 }
